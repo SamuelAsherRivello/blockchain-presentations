@@ -1,7 +1,7 @@
 import { readFile } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vite'
-import { canonicalSlideRouteFor, editorOwnerForPath, landingLabelFor, landingService, livePreviewManifest, validateLivePreviewManifest, visiblePreviews } from './scripts/live-preview-manifest.mjs'
+import { canonicalSlideRouteFor, editorOwnerForPath, landingLabelFor, landingService, livePreviewManifest, validateLivePreviewManifest, visiblePreviews } from './presentations/scripts/live-preview-manifest.mjs'
 
 const statusFile = fileURLToPath(new URL('./output/logs/slidev-landing/current-status.json', import.meta.url))
 const packageJson = JSON.parse(await readFile(new URL('./package.json', import.meta.url), 'utf8'))
@@ -57,7 +57,7 @@ function readRequestBody(request) {
 
 // One local entry point for the three independently themed Slidev servers.
 export default defineConfig({
-  root: './launcher',
+  root: './presentations/launcher',
   plugins: [
     {
       name: 'manifest-backed-slidev-landing-and-status',

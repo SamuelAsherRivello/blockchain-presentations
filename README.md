@@ -6,7 +6,7 @@ Developer focused Slidev presentations about the Blockchain Integration Service,
 
 ## Public decks
 
-The [route manifest](scripts/live-preview-manifest.mjs) declares the public decks and versions: Modrian Template, Blockchain for Game Designers, Blockchain for Game Developers, Bitcoin for Games, Tease Subdeck, Games Subdeck, and Outro. `themes/mondrian` supplies their shared layouts and components.
+The [route manifest](presentations/scripts/live-preview-manifest.mjs) declares the public decks and versions: Modrian Template, Blockchain for Game Designers, Blockchain for Game Developers, Bitcoin for Games, Tease Subdeck, Games Subdeck, and Outro. `presentations/themes/mondrian` supplies their shared layouts and components.
 
 ## Run locally
 

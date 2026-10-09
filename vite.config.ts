@@ -18,7 +18,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@shikijs/vitepress-twoslash/client': fileURLToPath(new URL('./setup/twoslash-noop.ts', import.meta.url)),
+      '@shikijs/vitepress-twoslash/client': fileURLToPath(new URL('./presentations/setup/twoslash-noop.ts', import.meta.url)),
     },
   },
   plugins: [

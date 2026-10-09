@@ -2,7 +2,8 @@ schema: spec-driven
 context: |
   Repository: blockchain-presentations, a Slidev documentation site.
   The repository root is the npm root. Public decks are declared in
-  scripts/live-preview-manifest.mjs and share themes/mondrian.
+  presentations/scripts/live-preview-manifest.mjs and share
+  presentations/themes/mondrian.
   Local authoring uses the supervised launcher at port 3032 and
   /slidev/<deck>/<slide> routes. The public Pages base is
   /blockchain-presentations/ and build output is dist/public/.

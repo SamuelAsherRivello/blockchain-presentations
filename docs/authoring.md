@@ -1,8 +1,8 @@
 # Slidev authoring guide
 
-This workspace contains seven public Slidev decks that share the local **Mondrian** theme: the Modrian Template catalog, Blockchain for Game Designers, Blockchain for Game Developers, Bitcoin for Games, Tease Subdeck, Games Subdeck, and Outro. Their public routes are declared in `scripts/live-preview-manifest.mjs`. Each content slide selects a named layout through frontmatter and supplies its own content and declared slots.
+This workspace contains seven public Slidev decks that share the local **Mondrian** theme: the Modrian Template catalog, Blockchain for Game Designers, Blockchain for Game Developers, Bitcoin for Games, Tease Subdeck, Games Subdeck, and Outro. Their public routes are declared in `presentations/scripts/live-preview-manifest.mjs`. Each content slide selects a named layout through frontmatter and supplies its own content and declared slots.
 
-`themes/mondrian` is the source of truth for layouts, shared components, responsive styling, and interactive-image behavior. See its [layout catalog](../themes/mondrian/layout-catalog.json) and [theme guide](../themes/mondrian/README.md). The decks do not inherit Markdown from each other; this is Slidev's supported theme-and-layout model.
+`presentations/themes/mondrian` is the source of truth for layouts, shared components, responsive styling, and interactive-image behavior. See its [layout catalog](../presentations/themes/mondrian/layout-catalog.json) and [theme guide](../presentations/themes/mondrian/README.md). The decks do not inherit Markdown from each other; this is Slidev's supported theme-and-layout model.
 
 Layout geometry belongs in the corresponding theme component, never in a catalog-only class. For example, `mondrian-image-bottom` owns its title, subtitle, and image-pane anchor positions, so a change automatically applies to every deck slide that selects it. `verify:rendered-layouts` checks each Blockchain slide against its mapped catalog example and compares shared Image Bottom text anchors, catching a catalog-only position override before review.
 
@@ -46,4 +46,4 @@ npm run verify:rendered-layouts
 
 `verify:rendered-layouts` requires the two Slidev servers above. It uses Playwright Chromium to compare all mapped Blockchain slides to their catalog layout and writes review screenshots under `output/screenshots/resync-deck-to-match-template/`.
 
-The reusable safe-area coordinates remain documented in [the safe-area guide](../riverside-safe-area-guides.md); the final theme deliberately contains no visible guide overlay. The public build is published by this repository’s GitHub Pages workflow.
+The reusable safe-area coordinates remain documented in [the safe-area guide](../documentation/riverside-safe-area-guides.md); the final theme deliberately contains no visible guide overlay. The public build is published by this repository’s GitHub Pages workflow.
