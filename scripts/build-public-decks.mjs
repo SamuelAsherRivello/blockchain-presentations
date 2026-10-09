@@ -1,4 +1,4 @@
-import { cp, mkdir, readFile, rm } from 'node:fs/promises'
+import { cp, mkdir, readFile, rm, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { spawn } from 'node:child_process'
 import { publicPreviews } from './live-preview-manifest.mjs'
@@ -20,11 +20,16 @@ async function renderedSlideCount(source) {
 async function materializeDeepLinks(deck) {
   const deckOutput = resolve(destination, deck.id)
   const shell = resolve(deckOutput, 'index.html')
+  const shellHtml = await readFile(shell, 'utf8')
+  if (!shellHtml.includes('<head>')) throw new Error(`${deck.id}: missing HTML head`)
   const total = await renderedSlideCount(deck.source)
   await Promise.all(Array.from({ length: total }, async (_, index) => {
-    const slideDirectory = resolve(deckOutput, String(index + 1))
+    const slide = index + 1
+    const slideDirectory = resolve(deckOutput, String(slide))
     await mkdir(slideDirectory, { recursive: true })
-    await cp(shell, resolve(slideDirectory, 'index.html'))
+    // Slidev currently uses hash routing. Set the requested slide before its app boots.
+    const bootstrap = `<script>if (!location.hash) history.replaceState(null, '', location.pathname + location.search + '#/${slide}')</script>`
+    await writeFile(resolve(slideDirectory, 'index.html'), shellHtml.replace('<head>', '<head>' + bootstrap))
   }))
 }
 

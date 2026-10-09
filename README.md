@@ -17,7 +17,7 @@ npm ci
 npm run dev:stable-preview
 ```
 
-Open `http://localhost:3032/`. The supervised launcher starts the declared deck servers and serves local slide routes such as `http://localhost:3032/slidev/blockchain-for-game-designers/29`. Run `npm run preview:status` to inspect the supervisor. See the [authoring guide](docs/authoring.md) for layout and editing conventions.
+Open `http://localhost:3032/`. The supervised launcher starts the declared deck servers and serves local slide routes such as `http://localhost:3032/slidev/blockchain-for-game-designers/29#/29`. Run `npm run preview:status` to inspect the supervisor. See the [authoring guide](docs/authoring.md) for layout and editing conventions.
 
 ## Verify and build
 

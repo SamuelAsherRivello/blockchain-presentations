@@ -14,7 +14,7 @@ From this folder, start or reuse the single supervised authoring runtime:
 npm run dev:stable-preview
 ```
 
-Open `http://localhost:3032/`. Every local deck URL uses one pathname slide number, for example `http://localhost:3032/slidev/blockchain-for-game-designers/29`; it never uses `#/29`. The landing page links to all seven public decks. The launcher on port 3032 proxies the deck servers declared in the manifest with no-cache headers for review.
+Open `http://localhost:3032/`. The launcher uses a pathname for the deck and Slidev currently uses a hash for the selected slide. For example, open `http://localhost:3032/slidev/blockchain-for-game-designers/29#/29` to select slide 29. The pending `update-url` OpenSpec change will make pathname-only slide links canonical. The landing page links to all seven public decks. The launcher on port 3032 proxies the deck servers declared in the manifest with no-cache headers for review.
 
 Use `npm run preview:status` for the supervisor state and `npm run
 verify:live-preview:proxy` for a non-authoring editor-routing check. Do not
