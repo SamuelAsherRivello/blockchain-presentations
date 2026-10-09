@@ -5,11 +5,12 @@ import { dirname, resolve } from 'node:path'
 const scriptDirectory = dirname(fileURLToPath(import.meta.url))
 const slidevDirectory = resolve(scriptDirectory, '..', '..')
 const deckFiles = [
-  'presentations/content/decks/slides.md',
-  'presentations/content/templates/template-deck.md',
   'presentations/content/templates/template-deck-b.md',
   'presentations/content/decks/blockchain-for-game-designers.md',
+  'presentations/content/decks/blockchain-for-game-developers.md',
   'presentations/content/decks/bitcoin-for-game-development.md',
+  'presentations/content/decks/tease-subdeck.md',
+  'presentations/content/decks/games-subdeck.md',
   'presentations/content/decks/outro.md',
 ]
 const terminalPunctuation = /[.!?;:]$/u

@@ -14,15 +14,8 @@
     "verify:live-preview:fast": "node --test presentations/scripts/test-live-preview-manifest.mjs presentations/scripts/test-live-preview-policy.mjs presentations/scripts/test-live-preview-readiness.mjs presentations/scripts/test-live-preview-coherence.mjs presentations/scripts/test-live-preview-diagnostics.mjs && node presentations/scripts/verify-live-preview.mjs --profile fast",
     "verify:live-preview": "node presentations/scripts/verify-live-preview.mjs --profile integration",
     "verify:live-preview:soak": "node presentations/scripts/slidev-live-preview.mjs soak --duration-hours 12",
-    "dev:seriph": "slidev presentations/content/decks/slides.md --theme seriph --port 3042 --base /slidev/seriph/",
-    "dev:apple-basic": "slidev presentations/content/decks/slides.md --theme apple-basic --port 3043 --base /slidev/apple-basic/",
-    "dev:dracula": "slidev presentations/content/decks/slides.md --theme dracula --port 3044 --base /slidev/dracula/",
-    "dev:template": "slidev presentations/content/templates/template-deck.md --theme default --port 3045 --base /slidev/template/",
-    "dev:modrian-template-1": "slidev presentations/content/templates/template-deck.md --theme ./presentations/themes/mondrian-classic --port 3046 --base /slidev/modrian-template-1/",
-    "dev:modrian-template-2": "slidev presentations/content/templates/modrian-template-2.md --theme ./presentations/themes/mondrian-night --port 3047 --base /slidev/modrian-template-2/",
     "dev:modrian-template": "slidev presentations/content/templates/modrian-template.md --theme ./presentations/themes/mondrian --port 3049 --base /slidev/modrian-template/",
     "predev:modrian-template": "npm run sync:layout-mappings",
-    "dev:modrian-template-3": "slidev presentations/content/templates/template-deck.md --theme ./presentations/themes/mondrian-signal --port 3048 --base /slidev/modrian-template-3/",
     "dev:blockchain-for-game-designers": "slidev presentations/content/decks/blockchain-for-game-designers.md --theme ./presentations/themes/mondrian --port 3051 --base /slidev/blockchain-for-game-designers/",
     "predev:blockchain-for-game-designers": "npm run sync:layout-mappings",
     "dev:blockchain-for-game-developers": "slidev presentations/content/decks/blockchain-for-game-developers.md --theme ./presentations/themes/mondrian --port 3057 --base /slidev/blockchain-for-game-developers/",
@@ -65,11 +58,8 @@
   },
   "devDependencies": {
     "@slidev/cli": "^53.0.0",
-    "@slidev/theme-apple-basic": "^0.25.1",
     "@slidev/theme-bricks": "^0.25.0",
     "@slidev/theme-default": "^0.25.0",
-    "@slidev/theme-seriph": "^0.25.0",
-    "playwright-chromium": "^1.63.0",
-    "slidev-theme-dracula": "^0.2.5"
+    "playwright-chromium": "^1.63.0"
   }
 }

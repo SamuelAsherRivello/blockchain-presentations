@@ -5,13 +5,6 @@ import { readFile } from 'node:fs/promises'
  * this module instead of copying ports, bases, or editor ownership elsewhere.
  */
 export const livePreviewManifest = Object.freeze([
-  { id: 'seriph', script: 'dev:seriph', source: 'presentations/content/decks/slides.md', port: 3042, base: '/slidev/seriph/', landing: false, editorOwner: 'seriph' },
-  { id: 'apple-basic', script: 'dev:apple-basic', source: 'presentations/content/decks/slides.md', port: 3043, base: '/slidev/apple-basic/', landing: false, editorOwner: 'apple-basic' },
-  { id: 'dracula', script: 'dev:dracula', source: 'presentations/content/decks/slides.md', port: 3044, base: '/slidev/dracula/', landing: false, editorOwner: 'dracula' },
-  { id: 'template', script: 'dev:template', source: 'presentations/content/templates/template-deck.md', port: 3045, base: '/slidev/template/', landing: false, editorOwner: 'template' },
-  { id: 'modrian-template-1', script: 'dev:modrian-template-1', source: 'presentations/content/templates/template-deck.md', port: 3046, base: '/slidev/modrian-template-1/', landing: false, editorOwner: 'modrian-template-1' },
-  { id: 'modrian-template-2', script: 'dev:modrian-template-2', source: 'presentations/content/templates/modrian-template-2.md', port: 3047, base: '/slidev/modrian-template-2/', landing: false, editorOwner: 'modrian-template-2' },
-  { id: 'modrian-template-3', script: 'dev:modrian-template-3', source: 'presentations/content/templates/template-deck.md', port: 3048, base: '/slidev/modrian-template-3/', landing: false, editorOwner: 'modrian-template-3' },
   { id: 'modrian-template', script: 'dev:modrian-template', source: 'presentations/content/templates/modrian-template.md', theme: './presentations/themes/mondrian', version: '0.0.4', port: 3049, base: '/slidev/modrian-template/', landing: true, visibility: 'public', editorOwner: 'modrian-template', order: 1, group: 'Templates' },
   { id: 'blockchain-for-game-designers', script: 'dev:blockchain-for-game-designers', source: 'presentations/content/decks/blockchain-for-game-designers.md', theme: './presentations/themes/mondrian', version: '0.0.4', port: 3051, base: '/slidev/blockchain-for-game-designers/', landing: true, visibility: 'public', editorOwner: 'blockchain-for-game-designers', order: 1, group: 'Decks' },
   { id: 'blockchain-for-game-developers', script: 'dev:blockchain-for-game-developers', source: 'presentations/content/decks/blockchain-for-game-developers.md', theme: './presentations/themes/mondrian', version: '0.0.4', port: 3057, base: '/slidev/blockchain-for-game-developers/', landing: true, visibility: 'public', editorOwner: 'blockchain-for-game-developers', order: 2, group: 'Decks' },

@@ -14,13 +14,6 @@ $logDirectory = Join-Path $repositoryRoot 'output\logs\slidev-landing\stable'
 New-Item -ItemType Directory -Path $logDirectory -Force | Out-Null
 
 $services = @(
-  @{ Name = 'seriph'; Script = 'dev:seriph'; Port = 3042; Path = '/slidev/seriph/1' },
-  @{ Name = 'apple-basic'; Script = 'dev:apple-basic'; Port = 3043; Path = '/slidev/apple-basic/1' },
-  @{ Name = 'dracula'; Script = 'dev:dracula'; Port = 3044; Path = '/slidev/dracula/1' },
-  @{ Name = 'template'; Script = 'dev:template'; Port = 3045; Path = '/slidev/template/1' },
-  @{ Name = 'modrian-template-1'; Script = 'dev:modrian-template-1'; Port = 3046; Path = '/slidev/modrian-template-1/1' },
-  @{ Name = 'modrian-template-2'; Script = 'dev:modrian-template-2'; Port = 3047; Path = '/slidev/modrian-template-2/1' },
-  @{ Name = 'modrian-template-3'; Script = 'dev:modrian-template-3'; Port = 3048; Path = '/slidev/modrian-template-3/1' },
   @{ Name = 'modrian-template'; Script = 'dev:modrian-template'; Port = 3049; Path = '/slidev/modrian-template/1' },
   @{ Name = 'blockchain-for-game-designers'; Script = 'dev:blockchain-for-game-designers'; Port = 3051; Path = '/slidev/blockchain-for-game-designers/1' },
   @{ Name = 'bitcoin-for-games'; Script = 'dev:bitcoin-for-games'; Port = 3056; Path = '/slidev/bitcoin-for-games/1' },
