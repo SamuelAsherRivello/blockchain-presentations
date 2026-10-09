@@ -1,12 +1,7 @@
-.setup/
-
-# Node and Vite output.
 node_modules/
-/project-name/dist/
-/.agents/artifacts/
-
-# Local configuration. Commit examples only, never credentials.
+dist/
+output/
 .env
 .env.*
-# Playwright CLI output (may contain credentials)
 .playwright-cli/
+*.tsbuildinfo
