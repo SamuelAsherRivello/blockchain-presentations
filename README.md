@@ -1,3 +1,8 @@
+<p>
+<img src="presentations/assets/samuel-asher-rivello-banner.png" alt="Samuel Asher Rivello" width="600" /><br /><br />
+<img src="presentations/assets/marketing/blockchain-presentations-marketing.png" alt="Blockchain Presentations marketing image" width="600" />
+</p>
+
 # Blockchain Presentations
 
 Developer focused Slidev presentations about the Blockchain Integration Service, Bitcoin, and games. Seven published decks share a local Mondrian theme and a route manifest.
