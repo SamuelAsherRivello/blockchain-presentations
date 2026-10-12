@@ -42,7 +42,10 @@ await mkdir(destination, { recursive: true })
 
 for (const deck of publicPreviews()) {
   await new Promise((resolveBuild, rejectBuild) => {
-    const child = spawn(npx, ['slidev', 'build', resolve(slidevRoot, deck.source), '--theme', deck.theme, '--base', `${pagesBase}/${deck.id}/`, '--out', resolve(destination, deck.id)], {
+    // Each deck declares its local theme in front matter. Passing a second
+    // --theme here makes Slidev resolve the theme twice during production
+    // builds, which silently drops the custom Mondrian layouts.
+    const child = spawn(npx, ['slidev', 'build', resolve(slidevRoot, deck.source), '--base', `${pagesBase}/${deck.id}/`, '--out', resolve(destination, deck.id)], {
       cwd: slidevRoot, shell: process.platform === 'win32',
       stdio: 'inherit',
     })

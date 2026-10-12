@@ -81,7 +81,8 @@ export function declaredMondrianInventory() {
   for (const [scriptName, command] of Object.entries(packageJson.scripts ?? {})) {
     if (!/^(dev|build):/.test(scriptName)) continue
     const entry = slidevEntry(command)
-    if (!entry || commandArgument(command, '--theme') !== expectedCommandTheme) continue
+    const commandTheme = commandArgument(command, '--theme')
+    if (!entry || (commandTheme && commandTheme !== expectedCommandTheme)) continue
     const entryPath = resolve(slidevDirectory, entry)
     const resolved = resolveSlidevSource(entryPath)
     const record = entries.get(resolved.path) ?? { path: resolved.path, source: resolved.source, scripts: [] }
