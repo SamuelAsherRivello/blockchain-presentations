@@ -67,6 +67,12 @@ export default defineConfig({
       configureServer(server) {
         server.middlewares.stack.unshift({ route: '', handle: async (request, response, next) => {
           const pathname = new URL(request.url ?? '/', 'http://localhost').pathname
+          if (pathname === '/') {
+            response.statusCode = 302
+            response.setHeader('location', '/slidev/landing-page/')
+            response.end()
+            return
+          }
           if (pathname !== '/__slidev/preview-status.json') return next()
           try {
             const status = JSON.parse(await readFile(statusFile, 'utf8'))

@@ -20,3 +20,10 @@ await writeFile(
     .replace('href="/favicon-slidev-presentations.svg"', 'href="./favicon-slidev-presentations.svg"')
     .replace('<!-- preview-links -->', links),
 )
+
+// Keep an easy-to-remember public alias while preserving the repository-root
+// landing URL used by existing links and bookmarks.
+const landingAlias = resolve(destination, 'slidev', 'landing-page')
+await mkdir(landingAlias, { recursive: true })
+await cp(resolve(destination, 'index.html'), resolve(landingAlias, 'index.html'))
+await cp(resolve(destination, 'favicon-slidev-presentations.svg'), resolve(landingAlias, 'favicon-slidev-presentations.svg'))
