@@ -1,5 +1,10 @@
 # Repository guidance
 
+## Commit quality
+
+- Make only purposeful commits. Each commit must be atomic: include one coherent, well-designed change and every file required for it.
+- Write a concise commit message that accurately describes the change's purpose and outcome.
+
 ## Scope
 
 This repository owns the Slidev decks, themes, assets, authoring runtime, and GitHub Pages publication for Blockchain Presentations. Keep public decks declared in `presentations/scripts/live-preview-manifest.mjs`; use that manifest when adding or changing a public route.
