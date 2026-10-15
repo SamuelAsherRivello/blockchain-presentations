@@ -1,0 +1,20 @@
+# Pattern syntax: https://git-scm.com/docs/gitignore
+# Secrets and machine-local settings
+.env*
+*.key
+*.pem
+
+# Dependencies and generated material
+node_modules/
+/dist/
+/coverage/
+# Triage packets are durable review records. Other generated output remains excluded.
+/output/**
+!/output/reports/
+!/output/reports/triage-analyze/
+!/output/reports/triage-analyze/**
+/.cache/
+/.vite/
+
+# Browser tooling output, which may contain credentials
+/.playwright-cli/

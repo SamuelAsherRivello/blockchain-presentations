@@ -1,0 +1,11 @@
+node_modules/
+dist/
+# Keep durable triage packets under version control. Other generated output remains local.
+/output/**
+!/output/reports/
+!/output/reports/triage-analyze/
+!/output/reports/triage-analyze/**
+.env
+.env.*
+.playwright-cli/
+*.tsbuildinfo

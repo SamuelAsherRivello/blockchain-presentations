@@ -1,0 +1,20 @@
+schema: spec-driven
+context: |
+  Repository: blockchain-presentations, a Slidev documentation site.
+  The repository root is the npm root. Public decks are declared in
+  presentations/scripts/live-preview-manifest.mjs and share
+  presentations/themes/mondrian.
+  Local authoring uses the supervised launcher at port 3032 and
+  /slidev/<deck>/<slide> routes. The public Pages base is
+  /blockchain-presentations/ and build output is dist/public/.
+  Keep generated logs, screenshots, and reports under output/.
+  Commands from the root: npm ci, npm run dev:stable-preview,
+  npm run verify:layout-contract, npm run build:public.
+  Do not create a pull request unless explicitly requested.
+rules:
+  proposal:
+    - State affected user behavior and acceptance criteria.
+  design:
+    - Describe only architecture and technologies verified for this project.
+  tasks:
+    - Keep implementation and verification tasks explicit.

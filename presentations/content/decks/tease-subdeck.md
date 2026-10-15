@@ -1,0 +1,98 @@
+---
+theme: ../../themes/mondrian
+colorSchema: dark
+layout: mondrian-subsection
+title: Tease Subdeck
+version: 0.0.4
+titleTemplate: 'Slidev - %s'
+favicon: /favicon-blockchain-for-gaming.svg
+author: Samuel Asher Rivello
+aspectRatio: 16/9
+canvasWidth: 1280
+routerMode: hash
+contentSlide: 1
+contentSlideId: tease-subdeck-title
+templateLayout: mondrian-subsection
+catalogSlide: 2
+imageTreatment: none
+---
+
+# BIS<br>& Game
+## Blockchain Integration Service
+
+---
+layout: mondrian-image-bottom
+contentSlide: 35.2
+contentSlideId: game-screenshot-one
+templateLayout: mondrian-image-bottom
+catalogSlide: 15
+image: ./assets/tease/Screenshot_Game_01.png
+backgroundSize: contain
+imageTreatment: documentation-screenshot
+---
+
+# Game
+
+Start with any game that can benefit from blockchain capabilities.
+
+---
+layout: mondrian-image-bottom
+contentSlide: 35.3
+contentSlideId: game-screenshot-two
+templateLayout: mondrian-image-bottom
+catalogSlide: 15
+image: ./assets/tease/Screenshot_Game_02.png
+backgroundSize: contain
+imageTreatment: documentation-screenshot
+---
+
+# Game
+
+Add the Blockchain Integration Service (BIS). The BIS includes a runtime UI layer and service layer.
+
+---
+layout: mondrian-image-bottom
+contentSlide: 37
+contentSlideId: g3faa3cf280c_1_0
+templateLayout: mondrian-image-bottom
+catalogSlide: 15
+image: ./assets/tease/bis-sequence-diagram-2.png
+backgroundSize: contain
+imageTreatment: shared-diagram
+---
+
+# BIS
+
+The BIS connects the game, marketplace, and Bitcoin services.
+
+---
+layout: mondrian-image-bottom
+contentSlide: 35.1
+contentSlideId: bis-admin-screenshot
+templateLayout: mondrian-image-bottom
+catalogSlide: 15
+image: ./assets/tease/Screenshot_Marketplace_01.png
+backgroundSize: contain
+imageTreatment: documentation-screenshot
+---
+
+# Marketplace
+
+The BIS includes a admin UI layer and service layer.
+
+---
+layout: mondrian-image-bottom
+contentSlide: 35.1
+contentSlideId: marketplace-screenshot
+templateLayout: mondrian-image-bottom
+catalogSlide: 15
+image: ./assets/tease/Screenshot_Admin_01.png
+backgroundSize: contain
+imageTreatment: documentation-screenshot
+---
+
+# Admin
+
+The BIS includes a developer-facing admin for testing workflows and new features.
+
+---
