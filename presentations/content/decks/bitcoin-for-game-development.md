@@ -295,9 +295,9 @@ imageTreatment: none
 
 ## <span class="quote-red-label">Q: Too limited?</span>
 
-# <span class="quote-bitcoin-label">A: Layer 2 moves in-game currency,<br>items, NFTs, custom contracts, and more ...</span>
+# <span class="quote-bitcoin-label">A: Arkade Assets and intent messages<br>support in-game currency, items, NFTs, and contracts.</span>
 
-— [Ark Protocol](https://ark-protocol.org/)
+— [Arkade Documentation](https://docs.arkadeos.com/)
 
 ---
 layout: mondrian-quote
@@ -673,7 +673,7 @@ imageTreatment: generated-original
 - Layer 3: Applications
 - Layer 2: Sidechains, channels
   - Make Bitcoin faster (instant payments via Lightning)
-  - Make Bitcoin more versatile (currencies, items, & contracts via Ark)
+  - Add currencies, items, and contracts with Arkade Assets and intent messages
 - Layer 1: Settlement, security
 
 ---
@@ -754,7 +754,7 @@ imageTreatment: none
 ---
 # Bitcoin Ecosystem
 
-<table class="deck-table deck-table--layers deck-table--ecosystem"><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><th><a href="https://lightning.network/">Lightning Network</a></th><td>Instant low-fee Bitcoin payments</td></tr><tr><th><a href="https://liquid.net/">Liquid</a></th><td>Confidential Bitcoin asset sidechain</td></tr><tr><th><a href="https://bitcoin.org/">Taproot</a></th><td>Layer 1 privacy and smart-contract flexibility</td></tr><tr><th><a href="https://ark-protocol.org/">Ark Protocol</a></th><td>Off-chain scalable Bitcoin payments</td></tr><tr><th><a href="https://arkadeos.com/">Arkade</a></th><td>Developer tools for Ark</td></tr></tbody></table>
+<table class="deck-table deck-table--layers deck-table--ecosystem"><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><th><a href="https://lightning.network/">Lightning Network</a></th><td>Instant low-fee Bitcoin payments</td></tr><tr><th><a href="https://liquid.net/">Liquid</a></th><td>Confidential Bitcoin asset sidechain</td></tr><tr><th><a href="https://bitcoin.org/">Taproot</a></th><td>Layer 1 privacy and smart-contract flexibility</td></tr><tr><th><a href="https://ark-protocol.org/">Ark</a></th><td>Design pattern for scalable off-chain Bitcoin payments</td></tr><tr><th><a href="https://arkadeos.com/">Arkade</a></th><td>Protocol for programmable Bitcoin applications</td></tr></tbody></table>
 
 ---
 layout: mondrian-subsection
@@ -895,13 +895,13 @@ catalogSlide: 6
 imageTreatment: none
 ---
 
-# Ark<br>Protocol
+# Ark<br>design pattern
 ## Layer 2
 ::left::
 
 ## About
 
-A layer 2 for low-cost, high-speed transactions.
+A design pattern for low-cost, high-speed Bitcoin payments.
 
 ::right::
 
@@ -959,20 +959,21 @@ class: arkade-protocol-spacing
 imageTreatment: none
 ---
 
-# Arkade<br>Execution Engine
+# Arkade<br>Protocol
 ## Layer 2
 
 ::left::
 
 ## About
 
-A programmable extension for financial applications.
+A protocol for programmable Bitcoin applications.
 
 ::right::
 
 ## Details
 
-- Toolkit: Payments, swaps, assets, contracts
+- Toolkit: Payments, swaps, and contracts
+- Assets: Arkade Assets plus intent messages
 - Bitcoin: Uses scripts and confirmations
 - Recovery: Users exit to Bitcoin
 
@@ -1106,7 +1107,7 @@ imageTreatment: none
 
 # Core Features 
 
-<ul class="feedback-capability-list"><li><strong>Accounts</strong>: Player identity and wallet connection</li><li><strong>Assets</strong>: Items and collectible ownership</li><li><strong>Transfers</strong>: Send, receive, buy, sell, or trade</li><li><strong>Contracts</strong>: Rules and transaction execution</li><li><strong>Events</strong>: Game-state synchronization</li></ul>
+<ul class="feedback-capability-list"><li><strong>Accounts</strong>: Player identity and wallet connection</li><li><strong>Assets</strong>: Arkade Assets plus intent messages for items and collectibles</li><li><strong>Transfers</strong>: Send, receive, buy, sell, or trade</li><li><strong>Contracts</strong>: Rules and transaction execution</li><li><strong>Events</strong>: Game-state synchronization</li></ul>
 
 ---
 layout: mondrian-content
@@ -1120,7 +1121,7 @@ imageTreatment: none
 
 # Core Features, Fast
 
-<ul class="feedback-capability-list"><li><strong>Accounts</strong>: Create a new player account <em>instantly</em></li><li><strong>Assets</strong>: Deliver an in-game power-up <em>instantly</em></li><li><strong>Transfers</strong>: Send sats to a player <em>instantly</em></li><li><strong>Contracts</strong>: Resolve game rules <em>instantly</em></li><li><strong>Events</strong>: Sync game state <em>instantly</em></li></ul>
+<ul class="feedback-capability-list"><li><strong>Accounts</strong>: Create a new player account <em>instantly</em></li><li><strong>Assets</strong>: Deliver an in-game power-up with Arkade Assets and an intent message <em>instantly</em></li><li><strong>Transfers</strong>: Send sats to a player <em>instantly</em></li><li><strong>Contracts</strong>: Resolve game rules <em>instantly</em></li><li><strong>Events</strong>: Sync game state <em>instantly</em></li></ul>
 
 Source: <FocusedLink href="https://docs.arkadeos.com/" name="Arkade Documentation" message="Official Arkade developer documentation." tone="orange" mode="direct">docs.arkadeos.com</FocusedLink>
 
@@ -1190,7 +1191,7 @@ imageTreatment: none
     <strong>Layer 1 ↔ Layer 2 (Rare)</strong>: Funding your wallet. Cashing out.
   </li>
   <li>
-    <strong>Layer 2 ↔ Layer 2 (Common)</strong>: <span class="bitcoin-orange">Currencies, items, NFTs, smart contracts, ...</span>
+    <strong>Layer 2 ↔ Layer 2 (Common)</strong>: <span class="bitcoin-orange">Arkade Assets and intent messages for currencies, items, NFTs, and contracts</span>
   </li>
 </ul>
 
