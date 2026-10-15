@@ -9,6 +9,7 @@
     "predev:stable-preview": "node presentations/scripts/patch-slidev-editor-autosave.mjs",
     "dev:stable-preview": "node presentations/scripts/slidev-live-preview.mjs start --duration-hours 12",
     "preview:status": "node presentations/scripts/slidev-live-preview.mjs status",
+    "verify:playwright-browser": "node presentations/scripts/verify-playwright-browser.mjs",
     "verify:live-preview:landing": "node presentations/scripts/verify-live-preview-landing.mjs",
     "verify:live-preview:proxy": "node --test presentations/scripts/test-live-preview-proxy.mjs",
     "verify:live-preview:fast": "node --test presentations/scripts/test-live-preview-manifest.mjs presentations/scripts/test-live-preview-policy.mjs presentations/scripts/test-live-preview-readiness.mjs presentations/scripts/test-live-preview-coherence.mjs presentations/scripts/test-live-preview-diagnostics.mjs && node presentations/scripts/verify-live-preview.mjs --profile fast",

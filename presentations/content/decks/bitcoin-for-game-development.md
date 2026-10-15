@@ -895,13 +895,13 @@ catalogSlide: 6
 imageTreatment: none
 ---
 
-# Ark<br>design pattern
+# Ark<br>Protocol
 ## Layer 2
 ::left::
 
 ## About
 
-A design pattern for low-cost, high-speed Bitcoin payments.
+A layer 2 for low-cost, high-speed transactions.
 
 ::right::
 
@@ -913,7 +913,7 @@ A design pattern for low-cost, high-speed Bitcoin payments.
 
 ::bottom::
 
-Source: [Ark-protocol.org](https://ark-protocol.org/)
+Source: <https://ark-protocol.org/> · <https://ark-protocol.org/intro/index.html>
 
 ---
 layout: mondrian-image-bottom
@@ -959,28 +959,27 @@ class: arkade-protocol-spacing
 imageTreatment: none
 ---
 
-# Arkade<br>Protocol
+# Arkade<br>Execution Engine
 ## Layer 2
 
 ::left::
 
 ## About
 
-A protocol for programmable Bitcoin applications.
+A programmable extension for financial applications.
 
 ::right::
 
 ## Details
 
-- Toolkit: Payments, swaps, and contracts
-- Assets: Arkade Assets plus intent messages
+- Toolkit: Payments, swaps, assets, contracts
 - Bitcoin: Uses scripts and confirmations
 - Recovery: Users exit to Bitcoin
 
 ::bottom::
 
 
-Source: [Arkadeos.com](https://arkadeos.com/)
+Source: <https://docs.arkadeos.com/>
 
 
 ---
