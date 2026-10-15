@@ -4,7 +4,11 @@
 node_modules/
 /dist/
 /coverage/
-/output/
+# Triage packets are durable review records. Other generated output remains excluded.
+/output/**
+!/output/reports/
+!/output/reports/triage-analyze/
+!/output/reports/triage-analyze/**
 /.cache/
 /.vite/
 
