@@ -1,4 +1,4 @@
-<a href="https://github.com/SamuelAsherRivello/blockchain-presentations"><img src="https://raw.githubusercontent.com/SamuelAsherRivello/blockchain-integration-service/main/BIS/documentation/samuel-asher-rivello-banner.png?v=20261010" width="640" alt="Samuel Asher Rivello" /></a>
+<a href="https://github.com/SamuelAsherRivello/blockchain-presentations"><img src="https://raw.githubusercontent.com/SamuelAsherRivello/blockchain-integration-service/main/docs/samuel-asher-rivello-banner.png?v=20261010" width="640" alt="Samuel Asher Rivello" /></a>
 
 [![GitHub Actions](https://img.shields.io/github/actions/workflow/status/SamuelAsherRivello/blockchain-presentations/deploy-presentations.yml?label=GitHub%20Actions)](https://github.com/SamuelAsherRivello/blockchain-presentations/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -47,7 +47,7 @@ The repository root is the npm project root.
 
 ### 🛠 Run Project
 
-1. Run `npm run dev` to start the Vite landing server on port 3032.
+1. Run `npm run dev` to start the supervised launcher and all declared deck servers on port 3032.
 2. Open `http://localhost:3032/`; the root redirects to `/slidev/landing-page/`.
 3. Run an individual declared `dev:*` script for a focused Slidev deck preview.
 

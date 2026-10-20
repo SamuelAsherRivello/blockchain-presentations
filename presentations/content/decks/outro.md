@@ -1,7 +1,7 @@
 ---
 theme: ../../themes/mondrian
 title: Outro
-version: 0.0.4
+version: 0.0.5
 titleTemplate: 'Slidev - %s'
 favicon: /favicon-outro.svg
 aspectRatio: 16/9

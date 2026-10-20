@@ -3,7 +3,7 @@ theme: ../../themes/mondrian
 colorSchema: dark
 layout: mondrian-title
 title: Blockchain For Game Designers
-version: 0.0.4
+version: 0.0.5
 titleTemplate: '%s'
 favicon: /favicon-blockchain-for-gaming.svg
 author: Samuel Asher Rivello
@@ -733,6 +733,17 @@ imageTreatment: none
 
 Source: [Bitcoin.org](https://bitcoin.org/bitcoin.pdf)
 
+---
+layout: mondrian-center
+localAddition: true
+templateLayout: mondrian-center
+catalogSlide: 7
+imageTreatment: none
+---
+
+# See the blockchain 
+## In action ...
+
 
 ---
 layout: mondrian-center
@@ -742,9 +753,8 @@ catalogSlide: 7
 imageTreatment: none
 ---
 
-# Let's see Blockchain
-## In Action ...
-
+# Checkout the repositories
+## Links in description below ...
 
 ---
 layout: mondrian-demo
@@ -761,4 +771,3 @@ Let's play the game. Then add BIS.
 ## <FocusedLink href="https://github.com/SamuelAsherRivello/blockchain-integration-service/" mode="direct" name="BIS" message="Service, UI, Admin, Marketplace." >BIS Marketplace</FocusedLink>
 
 ## <FocusedLink href="https://github.com/SamuelAsherRivello/blockchain-integration-service/" mode="direct" name="BIS" message="Service, UI, Admin, Marketplace." >BIS Admin</FocusedLink>
-

@@ -1,9 +1,11 @@
-import { readFile } from 'node:fs/promises'
+import { readFile, stat } from 'node:fs/promises'
+import { extname, relative, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vite'
 import { canonicalSlideRouteFor, editorOwnerForPath, landingLabelFor, landingService, livePreviewManifest, validateLivePreviewManifest, visiblePreviews } from './presentations/scripts/live-preview-manifest.mjs'
 
 const statusFile = fileURLToPath(new URL('./output/logs/slidev-landing/current-status.json', import.meta.url))
+const assetsRoot = fileURLToPath(new URL('./presentations/assets/', import.meta.url))
 const packageJson = JSON.parse(await readFile(new URL('./package.json', import.meta.url), 'utf8'))
 const manifestCheck = validateLivePreviewManifest(livePreviewManifest, packageJson.scripts)
 if (!manifestCheck.valid) throw new Error(`Invalid live preview manifest:\n${manifestCheck.errors.join('\n')}`)
@@ -12,6 +14,44 @@ const preventCache = (proxy) => {
   proxy.on('proxyRes', (response) => {
     response.headers['cache-control'] = 'no-store, max-age=0'
   })
+}
+
+const assetContentTypes = Object.freeze({
+  '.avif': 'image/avif',
+  '.gif': 'image/gif',
+  '.jpeg': 'image/jpeg',
+  '.jpg': 'image/jpeg',
+  '.png': 'image/png',
+  '.svg': 'image/svg+xml',
+  '.webp': 'image/webp',
+})
+
+async function serveSharedAsset(request, response, next) {
+  if (!['GET', 'HEAD'].includes(request.method ?? 'GET')) return next()
+
+  let pathname
+  try { pathname = decodeURIComponent(new URL(request.url ?? '/', 'http://localhost').pathname) }
+  catch { return next() }
+
+  const entry = livePreviewManifest.find((candidate) => pathname.startsWith(`${candidate.base}assets/`))
+  const assetPrefix = pathname.startsWith('/assets/') ? '/assets/' : entry ? `${entry.base}assets/` : null
+  if (!assetPrefix) return next()
+
+  const assetPath = resolve(assetsRoot, pathname.slice(assetPrefix.length))
+  const assetRelativePath = relative(assetsRoot, assetPath)
+  if (!assetRelativePath || assetRelativePath.startsWith('..') || assetRelativePath.includes(':')) return next()
+
+  try {
+    const details = await stat(assetPath)
+    if (!details.isFile()) return next()
+    response.statusCode = 200
+    response.setHeader('content-type', assetContentTypes[extname(assetPath).toLowerCase()] ?? 'application/octet-stream')
+    response.setHeader('content-length', details.size)
+    response.setHeader('cache-control', 'no-store, max-age=0')
+    if (request.method === 'HEAD') response.end()
+    else response.end(await readFile(assetPath))
+  }
+  catch { next() }
 }
 
 const themePreview = (entry) => ({
@@ -65,6 +105,7 @@ export default defineConfig({
         return html.replace('<!-- preview-links -->', await landingLinks())
       },
       configureServer(server) {
+        server.middlewares.stack.unshift({ route: '', handle: serveSharedAsset })
         server.middlewares.stack.unshift({ route: '', handle: async (request, response, next) => {
           const pathname = new URL(request.url ?? '/', 'http://localhost').pathname
           if (pathname === '/') {

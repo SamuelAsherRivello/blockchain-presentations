@@ -3,7 +3,7 @@ theme: ../../themes/mondrian
 colorSchema: dark
 layout: mondrian-subsection
 title: Tease Subdeck
-version: 0.0.4
+version: 0.0.5
 titleTemplate: 'Slidev - %s'
 favicon: /favicon-blockchain-for-gaming.svg
 author: Samuel Asher Rivello

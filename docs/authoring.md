@@ -46,4 +46,4 @@ npm run verify:rendered-layouts
 
 `verify:rendered-layouts` requires the two Slidev servers above. It uses Playwright Chromium to compare all mapped Blockchain slides to their catalog layout and writes review screenshots under `output/screenshots/resync-deck-to-match-template/`.
 
-The reusable safe-area coordinates remain documented in [the safe-area guide](../documentation/riverside-safe-area-guides.md); the final theme deliberately contains no visible guide overlay. The public build is published by this repository’s GitHub Pages workflow.
+The reusable safe-area coordinates remain documented in [the safe-area guide](../docs/riverside-safe-area-guides.md); the final theme deliberately contains no visible guide overlay. The public build is published by this repository’s GitHub Pages workflow.

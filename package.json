@@ -1,10 +1,11 @@
 {
   "name": "blockchain-presentations",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite --config comparison.vite.config.mjs --port 3032 --strictPort",
+    "predev": "node presentations/scripts/patch-slidev-editor-autosave.mjs",
+    "dev": "node presentations/scripts/slidev-live-preview.mjs start --duration-hours 12",
     "dev:comparison": "vite --config comparison.vite.config.mjs --port 3032 --strictPort",
     "predev:stable-preview": "node presentations/scripts/patch-slidev-editor-autosave.mjs",
     "dev:stable-preview": "node presentations/scripts/slidev-live-preview.mjs start --duration-hours 12",

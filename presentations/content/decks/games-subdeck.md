@@ -3,7 +3,7 @@ theme: ../../themes/mondrian
 colorSchema: dark
 layout: mondrian-product
 title: Games Subdeck
-version: 0.0.4
+version: 0.0.5
 author: Samuel Asher Rivello
 aspectRatio: 16/9
 canvasWidth: 1280
