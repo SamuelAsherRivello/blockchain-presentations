@@ -69,11 +69,14 @@ const isWhiteTint = computed(() => props.imageTint === 'white')
 .mondrian-image-bottom__copy { display: grid; align-content: start; gap: .6rem; min-height: 0; padding: 0; transform: translate(4.5%, -1.3rem); }
 .mondrian-image-bottom__copy :deep(h1), .mondrian-image-bottom__copy :deep(h2) { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .mondrian-image-bottom__copy :deep(h1) { margin: 0; line-height: 1.12; transform: translate(-20px, 20px); }
-.mondrian-image-bottom__copy :deep(h2), .mondrian-image-bottom__copy :deep(p) { margin: 0; line-height: 1.2; opacity: .72; transform: translate(-15px, 2.6rem); }
-.mondrian-image-bottom__pane { position: relative; min-height: 0; margin-top: 2rem; overflow: hidden; background: transparent; }
+.mondrian-image-bottom__copy :deep(h2), .mondrian-image-bottom__copy :deep(p) { margin: 0; line-height: 1.2; opacity: .72; transform: translate(-32px, 1.3rem); }
+.mondrian-image-bottom__pane { position: relative; min-height: 0; margin-top: 1.1rem; overflow: hidden; background: transparent; }
 .mondrian-image-bottom--bleed-pane-to-bottom { padding-bottom: 0; }
 .mondrian-image-bottom__pane--overlay { overflow: visible; }
-.mondrian-image-bottom__art { position: absolute; inset: 0; background-position: center; background-repeat: no-repeat; }
+/* The title remains on the established anchor. Secondary copy and art share
+   the left/up visual field marked by the template; this keeps every image-
+   bottom implementation aligned without per-slide transforms. */
+.mondrian-image-bottom__art { position: absolute; top: -2%; right: 4%; bottom: 2%; left: -4%; background-position: center; background-repeat: no-repeat; }
 .mondrian-image-bottom__art--white { filter: brightness(0) invert(1); }
 .mondrian-image-bottom__overlay { position: absolute; z-index: 2; left: calc(50% - 20px); bottom: 0; width: min(25%, 20rem); max-height: 35%; object-fit: contain; transform: translateX(-50%); }
 .mondrian-image-bottom__pane--placeholder { background: #55585c; }

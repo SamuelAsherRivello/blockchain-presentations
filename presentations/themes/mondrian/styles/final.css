@@ -267,6 +267,30 @@
   margin-bottom: 1rem;
 }
 
+/* Keep two-column comparison slides on a deliberate vertical rhythm. The
+   lead-in before the first bullet matches the space between bullets, while a
+   subheading gets half that rhythm above and below it. */
+.slidev-layout.mondrian-two-columns-header .col-left > ul,
+.slidev-layout.mondrian-two-columns-header .col-right > ul,
+.slidev-layout.mondrian-two-columns-header .col-left > ol,
+.slidev-layout.mondrian-two-columns-header .col-right > ol {
+  display: grid;
+  gap: .72rem;
+  margin-top: .72rem;
+}
+
+.slidev-layout.mondrian-two-columns-header .col-left > h3,
+.slidev-layout.mondrian-two-columns-header .col-right > h3 {
+  margin-top: .36rem;
+  margin-bottom: .36rem;
+}
+
+/* Give the three-level action slide a clear pause between its framing line
+   and the first level, matching the rhythm used by the comparison template. */
+.slidev-layout.action-levels > h2 {
+  margin-bottom: 1.25rem;
+}
+
 /* Align the Arkade overview paragraph with the Details list beside it. */
 .slidev-layout.arkade-protocol-spacing .col-left > p {
   margin-top: 0;
