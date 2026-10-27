@@ -3,12 +3,18 @@ import { extname, relative, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vite'
 import { canonicalSlideRouteFor, editorOwnerForPath, landingLabelFor, landingService, livePreviewManifest, validateLivePreviewManifest, visiblePreviews } from './presentations/scripts/live-preview-manifest.mjs'
+import { serveHashSlideDocuments } from './presentations/scripts/live-preview-slide-routing.mjs'
 
 const statusFile = fileURLToPath(new URL('./output/logs/slidev-landing/current-status.json', import.meta.url))
 const assetsRoot = fileURLToPath(new URL('./presentations/assets/', import.meta.url))
 const packageJson = JSON.parse(await readFile(new URL('./package.json', import.meta.url), 'utf8'))
 const manifestCheck = validateLivePreviewManifest(livePreviewManifest, packageJson.scripts)
 if (!manifestCheck.valid) throw new Error(`Invalid live preview manifest:\n${manifestCheck.errors.join('\n')}`)
+const hashDecks = (await Promise.all(livePreviewManifest.map(async (entry) => {
+  const source = await readFile(new URL(entry.source, import.meta.url), 'utf8')
+  const headmatter = /^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/.exec(source)?.[1] ?? ''
+  return /^routerMode:\s*['"]?hash['"]?\s*$/m.test(headmatter) ? entry : null
+}))).filter(Boolean)
 
 const preventCache = (proxy) => {
   proxy.on('proxyRes', (response) => {
@@ -105,6 +111,7 @@ export default defineConfig({
         return html.replace('<!-- preview-links -->', await landingLinks())
       },
       configureServer(server) {
+        server.middlewares.stack.unshift({ route: '', handle: serveHashSlideDocuments(hashDecks) })
         server.middlewares.stack.unshift({ route: '', handle: serveSharedAsset })
         server.middlewares.stack.unshift({ route: '', handle: async (request, response, next) => {
           const pathname = new URL(request.url ?? '/', 'http://localhost').pathname
