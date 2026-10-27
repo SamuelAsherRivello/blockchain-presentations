@@ -46,7 +46,9 @@ const isWhiteTint = computed(() => props.imageTint === 'white')
       <slot />
     </div>
     <div class="mondrian-image-bottom__pane" :class="{ 'mondrian-image-bottom__pane--placeholder': isTemplateImage, 'mondrian-image-bottom__pane--overlay': props.overlayImage }" :style="{ backgroundColor: props.imagePaneColor }" aria-label="Image placeholder">
-      <div v-if="image && !isTemplateImage" class="mondrian-image-bottom__art" :class="{ 'mondrian-image-bottom__art--white': isWhiteTint }" :style="imageStyle"></div>
+      <div v-if="image && !isTemplateImage" class="mondrian-image-bottom__art" :class="{ 'mondrian-image-bottom__art--white': isWhiteTint }" :style="imageStyle">
+        <slot name="image-overlay" />
+      </div>
       <img v-if="props.overlayImage" class="mondrian-image-bottom__overlay" :src="resolvedOverlayImage" alt="" />
     </div>
     <MondrianArrow
@@ -69,7 +71,7 @@ const isWhiteTint = computed(() => props.imageTint === 'white')
 .mondrian-image-bottom__copy { display: grid; align-content: start; gap: .6rem; min-height: 0; padding: 0; transform: translate(4.5%, -1.3rem); }
 .mondrian-image-bottom__copy :deep(h1), .mondrian-image-bottom__copy :deep(h2) { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .mondrian-image-bottom__copy :deep(h1) { margin: 0; line-height: 1.12; transform: translate(-20px, 20px); }
-.mondrian-image-bottom__copy :deep(h2), .mondrian-image-bottom__copy :deep(p) { margin: 0; line-height: 1.2; opacity: .72; transform: translate(-32px, 1.3rem); }
+.mondrian-image-bottom__copy :deep(h2), .mondrian-image-bottom__copy :deep(p) { margin: 0; line-height: 1.2; opacity: .72; transform: translate(-20px, 1.3rem); }
 .mondrian-image-bottom__pane { position: relative; min-height: 0; margin-top: 1.1rem; overflow: hidden; background: transparent; }
 .mondrian-image-bottom--bleed-pane-to-bottom { padding-bottom: 0; }
 .mondrian-image-bottom__pane--overlay { overflow: visible; }

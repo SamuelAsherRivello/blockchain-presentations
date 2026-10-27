@@ -798,3 +798,14 @@ table { margin-top: 20px; }
 .feedback-capability-list--detailed { gap: .22rem; }
 .feedback-capability-list--detailed > li > ul { display: grid; grid-template-columns: minmax(0, 1fr); gap: .05rem; margin: .08rem 0 .08rem 1.1rem; font-size: 1em; }
 .mondrian-image-layout:has(.blockchain-structure-custom-image) .mondrian-image-pane { background-color: transparent; background-position: center; background-repeat: no-repeat; background-size: contain; }
+
+/* Compact the two game-activity slides without changing other comparisons. */
+.slidev-layout.mondrian-two-columns-header.game-activity-list .col-left > ul,
+.slidev-layout.mondrian-two-columns-header.game-activity-list .col-right > ul {
+  gap: .36rem;
+  margin-top: .36rem;
+}
+.slidev-layout.mondrian-two-columns-header.game-activity-list li {
+  margin-top: 0;
+  margin-bottom: 0;
+}

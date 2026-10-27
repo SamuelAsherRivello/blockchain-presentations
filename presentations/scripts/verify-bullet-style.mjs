@@ -8,6 +8,7 @@ const deckFiles = [
   'presentations/content/templates/template-deck-b.md',
   'presentations/content/decks/blockchain-for-game-designers.md',
   'presentations/content/decks/blockchain-for-game-developers.md',
+  'presentations/content/decks/blockchain-for-game-mechanics.md',
   'presentations/content/decks/bitcoin-for-game-development.md',
   'presentations/content/decks/tease-subdeck.md',
   'presentations/content/decks/games-subdeck.md',

@@ -47,7 +47,7 @@
     "build:outro": "slidev build presentations/content/decks/outro.md --out ../../../dist/outro",
     "prebuild:outro": "npm run sync:layout-mappings",
     "prebuild:decks": "npm run sync:layout-mappings",
-    "build:decks": "npm run verify:bullet-style && npm run build:modrian-template && npm run build:blockchain-for-game-designers && npm run build:blockchain-for-game-developers && npm run build:bitcoin-for-games && npm run build:tease-subdeck && npm run build:games-subdeck && npm run build:outro",
+    "build:decks": "npm run verify:bullet-style && npm run build:modrian-template && npm run build:blockchain-for-game-designers && npm run build:blockchain-for-game-developers && npm run build:blockchain-for-game-mechanics && npm run build:bitcoin-for-games && npm run build:tease-subdeck && npm run build:games-subdeck && npm run build:outro",
     "prebuild:public": "npm run sync:layout-mappings",
     "build:public": "node presentations/scripts/build-public-decks.mjs",
     "sync:layout-mappings": "node presentations/scripts/sync-layout-mappings.mjs && node presentations/scripts/verify-layout-contract.mjs",
@@ -56,7 +56,11 @@
     "verify:bullet-style": "node presentations/scripts/verify-bullet-style.mjs",
     "verify:layout-contract:self-test": "node presentations/scripts/verify-layout-contract.mjs --self-test",
     "verify:rendered-layouts": "node presentations/scripts/verify-rendered-layouts.mjs",
-    "export": "slidev export presentations/content/templates/modrian-template.md --theme ./presentations/themes/mondrian"
+    "export": "slidev export presentations/content/templates/modrian-template.md --theme ./presentations/themes/mondrian",
+    "dev:blockchain-for-game-mechanics": "slidev presentations/content/decks/blockchain-for-game-mechanics.md --port 3058 --base /slidev/blockchain-for-game-mechanics/",
+    "predev:blockchain-for-game-mechanics": "npm run sync:layout-mappings",
+    "build:blockchain-for-game-mechanics": "slidev build presentations/content/decks/blockchain-for-game-mechanics.md --out ../../../dist/blockchain-for-game-mechanics",
+    "prebuild:blockchain-for-game-mechanics": "npm run sync:layout-mappings"
   },
   "devDependencies": {
     "@slidev/cli": "^53.0.0",

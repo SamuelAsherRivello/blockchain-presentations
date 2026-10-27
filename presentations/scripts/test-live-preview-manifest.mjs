@@ -31,18 +31,21 @@ test('manifest preflight maps every declared deck to its package script, landing
 test('landing labels follow deck titles and explicit section order', async () => {
   assert.deepEqual(visiblePreviews().map((entry) => [entry.group, entry.order]), [
     ['Templates', 1],
-    ['Decks', 1], ['Decks', 2], ['Decks', 3],
+    ['Decks', 1], ['Decks', 3], ['Decks', 4], ['Decks', 5],
     ['Subdecks', 1], ['Subdecks', 2], ['Subdecks', 3],
   ])
   const labels = await Promise.all(visiblePreviews().map(landingLabelFor))
   assert.equal(labels[0], '1. Modrian - Template')
-  assert.equal(labels[3], '3. Bitcoin For Game Development')
+  assert.equal(labels[2], '3. Blockchain For Game Mechanics')
+  assert.equal(labels[3], '4. Blockchain For Game Developers')
+  assert.equal(labels[4], '5. Bitcoin For Game Development')
 })
 
 test('public release inventory is limited to explicitly public landing decks', () => {
   assert.deepEqual(publicPreviews().map((entry) => entry.id), [
     'modrian-template',
     'blockchain-for-game-designers',
+    'blockchain-for-game-mechanics',
     'blockchain-for-game-developers',
     'bitcoin-for-games',
     'tease-subdeck',
@@ -80,4 +83,12 @@ test('normalizes bases and rejects duplicate ports, routes, owners, and scripts'
     { ...livePreviewManifest.find((entry) => entry.id === 'bitcoin-for-games'), order: livePreviewManifest.find((entry) => entry.id === 'blockchain-for-game-designers').order },
   ])
   assert.match(duplicateOrder.errors.join('\n'), /duplicate landing order/)
+})
+
+
+test('mechanics and developer decks have independent authoring identities', () => {
+  const developer = livePreviewManifest.find(entry => entry.id === 'blockchain-for-game-developers')
+  const mechanics = livePreviewManifest.find(entry => entry.id === 'blockchain-for-game-mechanics')
+  for (const key of ['source', 'base', 'port', 'editorOwner']) assert.notEqual(mechanics[key], developer[key], key)
+  assert.equal(new Set(publicPreviews().map(entry => entry.source)).size, publicPreviews().length)
 })

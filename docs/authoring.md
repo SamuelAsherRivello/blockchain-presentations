@@ -1,6 +1,6 @@
 # Slidev authoring guide
 
-This workspace contains seven public Slidev decks that share the local **Mondrian** theme: the Modrian Template catalog, Blockchain for Game Designers, Blockchain for Game Developers, Bitcoin for Games, Tease Subdeck, Games Subdeck, and Outro. Their public routes are declared in `presentations/scripts/live-preview-manifest.mjs`. Each content slide selects a named layout through frontmatter and supplies its own content and declared slots.
+This workspace contains eight public Slidev decks that share the local **Mondrian** theme: the Modrian Template catalog, Blockchain for Game Designers, Blockchain for Game Developers, Blockchain for Game Mechanics, Bitcoin for Games, Tease Subdeck, Games Subdeck, and Outro. Their public routes are declared in `presentations/scripts/live-preview-manifest.mjs`. Each content slide selects a named layout through frontmatter and supplies its own content and declared slots.
 
 `presentations/themes/mondrian` is the source of truth for layouts, shared components, responsive styling, and interactive-image behavior. See its [layout catalog](../presentations/themes/mondrian/layout-catalog.json) and [theme guide](../presentations/themes/mondrian/README.md). The decks do not inherit Markdown from each other; this is Slidev's supported theme-and-layout model.
 
@@ -14,7 +14,7 @@ From this folder, start or reuse the single supervised authoring runtime:
 npm run dev:stable-preview
 ```
 
-Open `http://localhost:3032/`. The launcher uses a pathname for the deck and Slidev currently uses a hash for the selected slide. For example, open `http://localhost:3032/slidev/blockchain-for-game-designers/29#/29` to select slide 29. The pending `update-url` OpenSpec change will make pathname-only slide links canonical. The landing page links to all seven public decks. The launcher on port 3032 proxies the deck servers declared in the manifest with no-cache headers for review.
+Open `http://localhost:3032/`. The launcher uses a pathname for the deck and Slidev currently uses a hash for the selected slide. For example, open `http://localhost:3032/slidev/blockchain-for-game-designers/29#/29` to select slide 29. The pending `update-url` OpenSpec change will make pathname-only slide links canonical. The landing page links to all eight public decks. The launcher on port 3032 proxies the deck servers declared in the manifest with no-cache headers for review.
 
 Use `npm run preview:status` for the supervisor state and `npm run
 verify:live-preview:proxy` for a non-authoring editor-routing check. Do not
